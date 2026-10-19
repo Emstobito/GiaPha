@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+
+# DỮ LIỆU THẬT CỦA DÒNG HỌ (SQLite + ảnh) — tuyệt đối không đưa vào git
+data/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+.env
+.env.*
+!.env.example

@@ -1,0 +1,25 @@
+{
+  "name": "giapha",
+  "private": true,
+  "description": "Ứng dụng web quản lý gia phả dòng họ",
+  "workspaces": [
+    "shared",
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "test": "npm run test -w server && npm run test -w web",
+    "typecheck": "tsc -p shared && tsc -p server --noEmit && tsc -p web --noEmit",
+    "lint": "eslint .",
+    "db:generate": "npm run db:generate -w server",
+    "db:seed": "npm run db:seed -w server"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.2"
+  }
+}
