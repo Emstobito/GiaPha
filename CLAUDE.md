@@ -6,6 +6,10 @@ Viết cho AI đọc — không phải cho người. "System prompt" của dự 
 dòng họ **xem công khai**, **đăng nhập mới được sửa**, **phân quyền sửa theo chi/nhánh**, quản trị **ẩn/hiện
 từng trường thông tin**, nhập/xuất Excel + GEDCOM. Kế hoạch đầy đủ 7 giai đoạn: `C:\Users\ADMIN\.claude\plans\zany-watching-otter.md`. Tiến độ: `PROGRESS.md`.
 
+## Repo & triển khai
+- GitHub **PUBLIC**: https://github.com/Emstobito/GiaPha (nhánh `main`) — mọi thứ commit đều công khai: tuyệt đối không commit `data/`, `.env`, token, dữ liệu thật.
+- Người dùng chốt hosting **Render (gói free)** 2026-10-19 → Render không có ổ đĩa lưu lâu dài + ngủ sau 15 phút → DB phải chuyển sang **Turso** (libSQL, tương thích SQLite, Drizzle hỗ trợ). CHƯA làm — xem `PROGRESS.md`.
+
 ## Stack
 - TypeScript toàn bộ, **npm workspaces**: `shared/` (kiểu dùng chung), `server/` (API), `web/` (giao diện).
 - Web: **React 19 + Vite 8 + React Flow (`@xyflow/react` 12)** + `d3-hierarchy` (bố cục). Dev `npm run dev:web` (:5173, proxy `/api` → :3700 — chạy kèm `dev:server`). KHÔNG ẩn logo React Flow (chỉ được ẩn khi mua Pro).

@@ -1,5 +1,17 @@
 # Nhật ký tiến độ — GiaPha
 
+## 2026-10-19 — Đưa lên GitHub public + chốt hosting Render free
+
+- Repo **public**: https://github.com/Emstobito/GiaPha — commit đầu `c23abe5` (54 file). Rà trước khi đẩy:
+  không có `data/`/DB/`.env`/token; SĐT trong dữ liệu mẫu là số giả. Thêm `.gitattributes` (`eol=lf`, Render chạy Linux).
+- Hosting chốt: **Render free** (đã so sánh 10/2026: Fly/Railway/Koyeb bỏ free; Oracle Always Free giữ được
+  kiến trúc nhưng phải tự quản trị). Render free **không có ổ đĩa bền** và **ngủ sau 15 phút** (mở lại ~30-60s).
+- **Việc bắt buộc trước khi chạy được trên Render** (nên làm TRƯỚC giai đoạn 4 để không viết đăng nhập/phiên 2 lần):
+  1. Đổi DB sang **Turso** (free 5 GB): `better-sqlite3` → `@libsql/client` + Drizzle dialect libsql; test vẫn
+     chạy local bằng file/`:memory:` libsql.
+  2. Server phục vụ luôn bản build của `web/` (1 dịch vụ Render duy nhất) + build/start command.
+  3. Biến môi trường: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN` (KHÔNG commit), `PORT`.
+
 ## 2026-10-19 — Nâng cấp giao diện (đẹp, hiện đại hơn)
 
 Theo yêu cầu người dùng. Phong cách: hiện đại nhưng mang chất gia phả Việt — nền giấy dó, đỏ son, vàng đồng;
